@@ -11,4 +11,5 @@ Next step will be updating some of the files
 * bat files, license
 * tests
 * pom: add our names, upgrade to 30, remove unneeded dependenies
+* modify config file
 
