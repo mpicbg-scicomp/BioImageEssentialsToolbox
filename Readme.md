@@ -13,4 +13,6 @@ Next step will be updating some of the files
 * pom: add our names, upgrade to 30, remove unneeded dependenies
 * modify config file
 * add to docs: The "parametric images" from the LabelAnalyzer can be replaced with "MorpholibJ -> LabelImages > Assign Measure To Label". the we don't need the label analyzer any more
+* move the pixcount function fo labelanalyser to constrain label map , then delete file
+* LabelAnalyser is strangely itnertwined with ConstraintLabelMap (-> getFeatures)
 
