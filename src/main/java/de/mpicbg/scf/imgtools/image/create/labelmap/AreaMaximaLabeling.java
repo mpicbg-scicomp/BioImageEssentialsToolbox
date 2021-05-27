@@ -231,13 +231,7 @@ public class AreaMaximaLabeling {
 		}
 	}
 	
-	
-	
-	public <T extends RealType<T> > Img<IntType> AreaMaxima(Img<T> input, final int AreaThresh)
-	{
-		float threshold = (float)input.firstElement().createVariable().getMinValue();
-		return AreaMaxima(input, AreaThresh, threshold);
-	}
+
 
 
 	public int getNumberOfFoundObjects() {

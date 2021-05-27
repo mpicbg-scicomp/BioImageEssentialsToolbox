@@ -9,7 +9,7 @@ import net.imglib2.type.numeric.RealType;
 import net.imglib2.view.Views;
 
 /**
- * This class takes two Img images as input and outputs a 2D-array of their corresponding joint histogram. Using ArrayToImageConverter, this histogram may be
+ * This class takes two Img images as input and outputs a 2D-array of their corresponding joint histogram.
  * drawn.
  * <p>
  * <p>

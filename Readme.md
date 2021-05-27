@@ -12,4 +12,5 @@ Next step will be updating some of the files
 * tests
 * pom: add our names, upgrade to 30, remove unneeded dependenies
 * modify config file
+* add to docs: The "parametric images" from the LabelAnalyzer can be replaced with "MorpholibJ -> LabelImages > Assign Measure To Label". the we don't need the label analyzer any more
 
