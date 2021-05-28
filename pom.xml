@@ -13,7 +13,7 @@
 
 	<groupId>de.mpicbg.scf</groupId>
 	<artifactId>SCF_ImgTools</artifactId>
-	<version>1.3.4</version>
+	<version>2.0.0</version>
 
 	<name>SCF_ImgTools</name>
 	
@@ -35,9 +35,44 @@
 		</license>
 	</licenses>
 
+    <properties>
+        <package-name>de.mpibcbg.scf</package-name>
+        <license.licenseName>bsd_3</license.licenseName>
+        <license.copyrightOwners>Max Planck Institute of Molecular Cell Biology and Genetics, Dresden</license.copyrightOwners>
+        <scijava.app.directory>/Users/walker/software/Fiji_dev.app</scijava.app.directory>
+    </properties>
 
-	<developers>
-		<developer>
+
+
+    <developers>
+        <developer>
+            <id>walkernoreen</id>
+            <name>Noreen Walker</name>
+            <url>https://github.com/walkernoreen</url>
+            <roles>
+                <role>developer</role>
+                <role>debugger</role>
+                <role>reviewer</role>
+                <role>support</role>
+                <role>maintainer</role>
+            </roles>
+        </developer>
+
+        <developer>
+            <id></id>
+            <name>Gayathri Nadar</name>
+            <url></url>
+            <roles>
+                <role>developer</role>
+                <role>debugger</role>
+                <role>reviewer</role>
+                <role>support</role>
+                <role>maintainer</role>
+            </roles>
+        </developer>
+
+
+        <developer>
 			<id>haesleinhuepf</id>
 			<name>Robert Haase</name>
 			<email>rhaase@mpi-cbg.de</email>
@@ -67,42 +102,39 @@
 		</contributor>
 	</contributors>
 
-	<mailingLists>
-		<mailingList>
-			<name>ImageJ Forum</name>
-			<archive>http://forum.imagej.net/</archive>
-		</mailingList>
-	</mailingLists>
-
-	<properties>
-		<package-name>de.mpibcbg.scf</package-name>
-		<license.licenseName>bsd_3</license.licenseName>
-		<license.copyrightOwners>Max Planck Institute of Molecular Cell Biology and Genetics, Dresden</license.copyrightOwners>
-		<scijava.app.directory>/Users/walker/software/Fiji_dev.app</scijava.app.directory>
-	</properties>
+    <mailingLists>
+        <mailingList>
+            <name>Image.sc Forum</name>
+            <archive>https://forum.image.sc/</archive>
+        </mailingList>
+    </mailingLists>
 
 
-	<scm>
-		<connection>scm:git:git.mpi-cbg.de:bioimage-informatics/imgtools</connection>
-		<developerConnection>scm:git:git@git.mpi-cbg.de:bioimage-informatics/imgtools</developerConnection>
-		<tag>HEAD</tag>
-		<url>https://git.mpi-cbg.de:bioimage-informatics/imgtools</url>
-	</scm>
-	<issueManagement>
-		<system>Gitlab Issues</system>
-		<url>https://git.mpi-cbg.de:bioimage-informatics/imgtools/issues</url>
-	</issueManagement>
+
+    <scm>
+        <url>none</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>TODO</url>
+    </issueManagement>
 	<ciManagement>
 		<system>None</system>
 	</ciManagement>
 
 
 
+    <repositories>
+        <!-- NB: for project parent -->
+        <repository>
+            <id>imagej.public</id>
+            <url>http://maven.imagej.net/content/groups/public</url>
+        </repository>
+    </repositories>
 
 
 
-
-	<dependencies>
+    <dependencies>
 		<dependency>
 			<groupId>net.imagej</groupId>
 			<artifactId>ij</artifactId>
@@ -112,11 +144,6 @@
 			<artifactId>imagej</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>sc.fiji</groupId>
-			<artifactId>3D_Viewer</artifactId>
-			<version>4.0.1</version>
-		</dependency>
 
 		<!-- Dependency for running automated test -->
 		<dependency>
@@ -136,10 +163,6 @@
 			<version>3.1.1</version>
 		</dependency>
 		<dependency>
-			<groupId>net.imagej</groupId>
-			<artifactId>imagej-mesh</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>net.imglib2</groupId>
 			<artifactId>imglib2-ij</artifactId>
 			<version>2.0.0-beta-46</version>
@@ -149,28 +172,5 @@
 
 
 
-
-	<repositories>
-		<!-- NB: for project parent -->
-		<repository>
-			<id>imagej.public</id>
-			<url>http://maven.imagej.net/content/groups/public</url>
-		</repository>
-		<repository>
-			<id>hslh</id>
-			<url>http://dl.bintray.com/haesleinhuepf/snapshots</url>
-		</repository>
-	</repositories>
-
-	<distributionManagement>
-
-		<repository>
-			<id>bintray-haesleinhuepf-snapshots</id>
-			<name>bintray-snapshots</name>
-			<url>https://api.bintray.com/maven/haesleinhuepf/snapshots/clearcontrol-lightsheet/;publish=1</url>
-		</repository>
-
-	</distributionManagement>
-	
 	
 </project>

@@ -10,9 +10,23 @@ Next step will be updating some of the files
 #### TODO
 * bat files, license
 * tests
-* pom: add our names, upgrade to 30, remove unneeded dependenies
+* pom: add our names, upgrade to 2.0, remove unneeded dependenies
 * modify config file
 * add to docs: The "parametric images" from the LabelAnalyzer can be replaced with "MorpholibJ -> LabelImages > Assign Measure To Label". the we don't need the label analyzer any more
 * move the pixcount function fo labelanalyser to constrain label map , then delete file
 * LabelAnalyser is strangely itnertwined with ConstraintLabelMap (-> getFeatures)
+* **AutoDisplayRange seems broken - even in older SCF versions (I checked 1.3.2)**
+* **I broke the LabelAnalyzer - but since we remove it anyway there is no real point in fixing it**
+
+
+#### Removed plugins (from config file)
+* "Threshold to LabelMap": ThesholdLabelinPlugin
+* "Difference of Gaussian": DifferenceOfGaussianBasedLabelingPlugin
+* "Watershed with seed points (2D, 3D)": WatershedLabelingPlugin
+* Experimental: "Ops Label Analyser (2D, 3D) *": OpsLabelAnalyserPlugin
+* Exerimental: "Particle Analyser_": ParticleAnalyserIJ1Plugin
+
+
+#### Other removed plugins (maybe they are IJ2 and appeared automatically?)
+* Volume Manager
 
