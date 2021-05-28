@@ -106,7 +106,7 @@ public class ConstraintLabelingPlugin implements PlugInFilter {
 		Img<FloatType> wrappedImp = ImageJFunctions.wrapReal(labelMap);
 		
 		ConstraintLabelmap<FloatType, FloatType> clm = new ConstraintLabelmap<FloatType, FloatType>(wrappedImp, voxelsize);
-		//ConstraintLabelMap clm = new ConstraintLabelMap(labelMap);
+
 		if (applyBinaryMask)
 		{
 			clm.setMustOverLapWithOtherLabelMap(binaryMask);
