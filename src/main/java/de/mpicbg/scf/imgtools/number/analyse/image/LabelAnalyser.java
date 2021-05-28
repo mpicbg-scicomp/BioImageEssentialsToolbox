@@ -30,7 +30,6 @@ import net.imglib2.view.Views;
  * Example code can be found in LabelParticleAnalyserTest
  * <p>
  * <p>
- * TODO: - Implement features Surface area
  * <p>
  * <p>
  * Author: Robert Haase, Scientific Computing Facility, MPI-CBG Dresden,
