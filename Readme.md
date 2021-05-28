@@ -16,7 +16,7 @@ Next step will be updating some of the files
 * move the pixcount function fo labelanalyser to constrain label map , then delete file
 * LabelAnalyser is strangely itnertwined with ConstraintLabelMap (-> getFeatures)
 * **AutoDisplayRange seems broken - even in older SCF versions (I checked 1.3.2)**
-* **I broke the LabelAnalyzer - but since we remove it anyway there is no real point in fixing it**
+* **I broke the LabelAnalyzer - but since we remove it anyway there is no real point in fixing it (reason is easy: the plugin class was already removed, I just still have the underlying workhorse classes**
 
 
 #### Removed plugins (from config file)
@@ -25,6 +25,7 @@ Next step will be updating some of the files
 * "Watershed with seed points (2D, 3D)": WatershedLabelingPlugin
 * Experimental: "Ops Label Analyser (2D, 3D) *": OpsLabelAnalyserPlugin
 * Exerimental: "Particle Analyser_": ParticleAnalyserIJ1Plugin
+* "Auto Display Range": AutoDisplayRangePlugin
 
 
 #### Other removed plugins (maybe they are IJ2 and appeared automatically?)

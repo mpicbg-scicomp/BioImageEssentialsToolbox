@@ -77,7 +77,6 @@ public class ConstraintLabelmap<I extends RealType<I>, F extends RealType<F>> {
         public final LabelAnalyser.Feature feature;
         public final double lowerThreshold;
         public final double upperThreshold;
-        public int measurementDimension = 0;
 
         // output variables
         public long affectedLabelCount = 0;
@@ -89,12 +88,6 @@ public class ConstraintLabelmap<I extends RealType<I>, F extends RealType<F>> {
             this.upperThreshold = upperThreshold;
         }
 
-        public Constraint(LabelAnalyser.Feature measurement, double lowerThreshold, double upperThreshold, int measurementDimension) {
-            this.feature = measurement;
-            this.lowerThreshold = lowerThreshold;
-            this.upperThreshold = upperThreshold;
-            this.measurementDimension = measurementDimension;
-        }
     }
 
     private final ArrayList<Constraint> constraintList = new ArrayList<Constraint>();
@@ -130,6 +123,7 @@ public class ConstraintLabelmap<I extends RealType<I>, F extends RealType<F>> {
 
         Cursor<I> cursor = resultingLabelMap.cursor();
 
+        // nr of initial labels
         long[] histogram = LabelAnalyser.getLabelsPixelCount(resultingLabelMap);
         DebugHelper.print(this, "There were " + histogram.length + " objects before  filtering ()");
         if (histogram.length == 0) {
@@ -162,7 +156,7 @@ public class ConstraintLabelmap<I extends RealType<I>, F extends RealType<F>> {
             if (lpa != null) {
                 for (int c = 0; c < this.constraintList.size(); c++) {
                     Constraint constraint = constraintList.get(c);
-                    double value = lpa.getFeatures(constraint.feature, constraint.measurementDimension)[i];
+                    double value = lpa.getFeatures(constraint.feature)[i];
 
                     if (value < constraint.lowerThreshold || value > constraint.upperThreshold) {
                         constraint.affectedLabelCount++;
@@ -210,18 +204,7 @@ public class ConstraintLabelmap<I extends RealType<I>, F extends RealType<F>> {
         resultValid = false;
     }
 
-    /**
-     * Set an interval in wich the labels must be. If a pixel of a label is outside that interval, the whole label will be removed from the labelmap
-     *
-     * @param interval an interval
-     */
-    public void addConstraintToRemoveLabelsOutsideInterval(Interval interval) {
-        for (int d = 0; d < labelMap.numDimensions(); d++) {
-            addConstraint(Feature.BOUNDING_BOX, interval.min(d) + 1, Double.MAX_VALUE, d);
-            addConstraint(Feature.BOUNDING_BOX, -Double.MAX_VALUE, labelMap.max(d) - 1, d + interval.numDimensions());
-        }
-        resultValid = false;
-    }
+
 
     /**
      * add a constraint for filtering the label map.
@@ -236,20 +219,6 @@ public class ConstraintLabelmap<I extends RealType<I>, F extends RealType<F>> {
         resultValid = false;
     }
 
-    /**
-     * add a constraint for filtering the label map. This function allows constrainting a dimension of a parameter. E.g. if you would like to constraint the map by the average-y coordinate of the labels, hand over 1 as measuremntDimension
-     *
-     * @param measurement          Which parameter/feature should be measured?
-     * @param lowerThreshold       What is the minimum value that is allowed to keep the label?
-     * @param upperThreshold       What is the maximum value that is allowed to keep the label?
-     * @param measurementDimension in which dimension should be measured
-     */
-    public void addConstraint(LabelAnalyser.Feature measurement, double lowerThreshold, double upperThreshold, int measurementDimension) {
-        DebugHelper.print(this, "" + lowerThreshold + " <= " + measurement.toString() + "(" + measurementDimension + ") <= " + upperThreshold);
-        Constraint c = new Constraint(measurement, lowerThreshold, upperThreshold, measurementDimension);
-        constraintList.add(c);
-        resultValid = false;
-    }
 
     /**
      * @param signalImage image with grey values

@@ -112,7 +112,7 @@ public class AreaMaximaLabelingPlugin implements PlugInFilter {
 		// 
 		new ij.ImageJ();
 		//IJ.open("/Users/rhaase/Projects/Akanksha_Tomancak_BeetleSegmentation/data/volumecut.tif");
-		IJ.open("/Users/rhaase/Projects/Milos_Huttner_support_multi_channel_cell_counting/Data/Barbara/C4-Image2_V2_Stitch_column.tif");
+		IJ.open("/Users/walker/Desktop/exemplary-image-data/test_12h_0.1x0.1x1.tif");
 		//ImagePlus imp = IJ.getImage();
 		
 		AreaMaximaLabelingPlugin amp = new AreaMaximaLabelingPlugin();

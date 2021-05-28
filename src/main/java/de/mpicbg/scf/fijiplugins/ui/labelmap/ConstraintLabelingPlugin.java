@@ -17,9 +17,6 @@ import de.mpicbg.scf.imgtools.ui.ImageJUtilities;
 /**
  * This plugin allows the user to filter a label map. So far, only minimum and maximum 
  * objects size have been implemented, however, more features may be analysed in the future as well.
- * 
- * 
- * Todo: add other constraints. maybe in a generic way...
  *
  *
  * Author: Robert Haase, Scientific Computing Facility, MPI-CBG Dresden,

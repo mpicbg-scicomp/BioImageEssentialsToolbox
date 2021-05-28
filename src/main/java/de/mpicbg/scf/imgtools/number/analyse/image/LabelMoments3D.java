@@ -131,26 +131,6 @@ public class LabelMoments3D<T extends RealType<T>, U extends RealType<U>> {
         return eigenvalues;
     }
 
-    public double getAspectRatio() {
-        double[] ev = getEigenVector();
-
-        if (ev == null) {
-            return 0;
-        }
-
-        double maxEv = ev[0];
-        double minEv = ev[0];
-        for (int j = 1; j < ev.length; j++) {
-            if (minEv > ev[j]) {
-                minEv = ev[j];
-            }
-            if (maxEv < ev[j]) {
-                maxEv = ev[j];
-            }
-        }
-        return minEv / maxEv;
-    }
-
     /**
      * Actual calculation of the moments. If centerX=centerY=centerZ=0, then moments are calculated. If the center is given, translation invariant moments are
      * calculated.

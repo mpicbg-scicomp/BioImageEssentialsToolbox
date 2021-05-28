@@ -89,8 +89,7 @@ public class PointsToLabelmapPlugin implements PlugInFilter {
 		int[] xArr = pr.getPolygon().xpoints;
 		int[] yArr = pr.getPolygon().ypoints;
 
-		//pr = pr.addPoint(0,0);
-		
+
 		ImagePlus labelMap = NewImage.createFloatImage("Label map from points (" + pr.getNCoordinates() + ")", imp.getWidth(), imp.getHeight(), 1, NewImage.FILL_BLACK);
 		labelMap.setCalibration(imp.getCalibration());
 		
@@ -105,7 +104,6 @@ public class PointsToLabelmapPlugin implements PlugInFilter {
 		
 		labelMap.setDisplayRange(0, xArr.length);
 
-		//ImgLib2Utils.showLabelMapProperly(detectedMaxima, "Label map from AreaMaxima ", dims, imp.getCalibration());
 		return labelMap;
 		
 	}
