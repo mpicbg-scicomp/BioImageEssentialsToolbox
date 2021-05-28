@@ -18,6 +18,9 @@ Next step will be updating some of the files
 * **AutoDisplayRange seems broken - even in older SCF versions (I checked 1.3.2)**
 * **I broke the LabelAnalyzer - but since we remove it anyway there is no real point in fixing it (reason is easy: the plugin class was already removed, I just still have the underlying workhorse classes**
 * make folder hierarchy flatter?
+* **LabelAnalyserTest**: reduce to what is left
+* **ImageLabelingUtilities or so**: were moved
+* unneeded resource images?
 
 #### Removed plugins (from config file)
 * "Threshold to LabelMap": ThesholdLabelinPlugin

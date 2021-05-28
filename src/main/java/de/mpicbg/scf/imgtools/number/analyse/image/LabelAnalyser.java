@@ -7,10 +7,15 @@ import net.imglib2.*;
 import net.imglib2.algorithm.stats.ComputeMinMax;
 import net.imglib2.img.Img;
 import net.imglib2.roi.Regions;
+import net.imglib2.roi.labeling.ImgLabeling;
 import net.imglib2.roi.labeling.LabelRegion;
 import net.imglib2.roi.labeling.LabelRegions;
+import net.imglib2.roi.labeling.LabelingType;
 import net.imglib2.type.numeric.RealType;
+import net.imglib2.type.numeric.integer.IntType;
 import net.imglib2.util.Intervals;
+import net.imglib2.util.Util;
+import net.imglib2.view.Views;
 
 /**
  * Update (2021-05) : Simplified LabelAnalyzer to only compute features that are needed on ConstraintLabelMap:
@@ -280,5 +285,22 @@ public class LabelAnalyser<I extends RealType<I>, F extends RealType<F>> {
         return intervals;
     }
 
+
+    public static <T extends RealType<T>> ImgLabeling<Integer, IntType> getIntIntImgLabellingFromLabelMapImg(Img<T> labelMap) {
+        final Dimensions dims = labelMap;
+        final IntType t = new IntType();
+        final RandomAccessibleInterval<IntType> img = Util.getArrayOrCellImgFactory(dims, t).create(dims, t);
+        final ImgLabeling<Integer, IntType> labeling = new ImgLabeling<Integer, IntType>(img);
+
+        final Cursor<LabelingType<Integer>> labelCursor = Views.flatIterable(labeling).cursor();
+
+        for (final T input : Views.flatIterable(labelMap)) {
+            final LabelingType<Integer> element = labelCursor.next();
+            if (input.getRealFloat() != 0) {
+                element.add((int) input.getRealFloat());
+            }
+        }
+        return labeling;
+    }
 
 }
