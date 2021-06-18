@@ -1,4 +1,4 @@
-Copyright 2017 Max Planck Institute of Molecular Cell Biology and Genetics,
+Copyright 2021 Max Planck Institute of Molecular Cell Biology and Genetics,
 Dresden, Germany
  
 Redistribution and use in source and binary forms, with or without
