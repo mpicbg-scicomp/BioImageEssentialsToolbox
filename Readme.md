@@ -21,6 +21,7 @@ Next step will be updating some of the files
 * **LabelAnalyserTest**: reduce to what is left
 * **ImageLabelingUtilities or so**: were moved
 * unneeded resource images?
+* WHAT IS THE JAR FILE NAME?
 
 #### Removed plugins (from config file) INCOMPLETE
 * "Threshold to LabelMap": ThesholdLabelinPlugin
@@ -30,6 +31,12 @@ Next step will be updating some of the files
 * Exerimental: "Particle Analyser_": ParticleAnalyserIJ1Plugin
 * "Auto Display Range": AutoDisplayRangePlugin
 
+
+#### What to do if an old plugin should be ported to the new suite?
+* Start with copying the plugin class file
+* Change the package name from XX to YY
+* Add all missing dependency files and tests
+* only needed if the old plugin is distributed at the same time: Change the name in the menu entry
 
 #### Other removed plugins (maybe they are IJ2 and appeared automatically?)
 * Volume Manager
