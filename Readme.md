@@ -22,7 +22,7 @@ Next step will be updating some of the files
 * **ImageLabelingUtilities or so**: were moved
 * unneeded resource images?
 
-#### Removed plugins (from config file)
+#### Removed plugins (from config file) INCOMPLETE
 * "Threshold to LabelMap": ThesholdLabelinPlugin
 * "Difference of Gaussian": DifferenceOfGaussianBasedLabelingPlugin
 * "Watershed with seed points (2D, 3D)": WatershedLabelingPlugin
