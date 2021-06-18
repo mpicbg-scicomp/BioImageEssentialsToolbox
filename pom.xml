@@ -12,10 +12,10 @@
 	</parent>
 
 	<groupId>de.mpicbg.scf</groupId>
-	<artifactId>SCF_ImgTools</artifactId>
+	<artifactId>SCF_ImageTools</artifactId>
 	<version>2.0.0</version>
 
-	<name>SCF_ImgTools</name>
+	<name>SCF_ImageTools</name>
 	
 	
 	<description>
