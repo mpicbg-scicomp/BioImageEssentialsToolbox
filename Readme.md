@@ -8,6 +8,7 @@ This is the revamped Bioimage toolbox where I copy all the files needed from the
 Next step will be updating some of the files
 
 #### TODO
+* SHOULD WE CHANGE THE MENU NAMES IN THE OLD OR IN THE NEW PLUGIN MENUDS?
 * bat files, license
 * tests
 * pom: add our names, upgrade to 2.0, remove unneeded dependenies
